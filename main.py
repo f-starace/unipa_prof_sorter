@@ -160,6 +160,9 @@ for doc in tqdm(word_docs):
 
         elif paragraph.text.strip().lower() == 'ricercatori':
             researcher_index = index
+        
+        elif paragraph.text.strip().lower() == 'rappresentanti dei dottorandi':
+            end_index = index
             break
     
     print('looping through "professori di prima fascia"...\n')
@@ -203,18 +206,27 @@ for doc in tqdm(word_docs):
             for professor in professors:
                 if professor.identifier() in paragraph_text:
                     professor.fill_table('justified',2, column_name )
+    
+    
+    for index in range(researcher_index, end_index):
+
+        paragraph_text = paragraphs[index].text
+        
+        if paragraph_text.startswith('Presenti'):
+            for professor in professors:
+                if professor.identifier() in paragraph_text:
+                    professor.fill_table('present',3, column_name )
+
+        elif paragraph_text.startswith('Assenti:'):
+            for professor in professors:
+                if professor.identifier() in paragraph_text:
+                    professor.fill_table('absent',3, column_name )
+
+        elif paragraph_text.startswith('Assenti giustificati'):
+            for professor in professors:
+                if professor.identifier() in paragraph_text:
+                    professor.fill_table('justified',3, column_name )
+
 
 wb.save('presenze_cdd.xlsx')
-
-        
-
-
-
-
-
-
-
-
-
-
 
