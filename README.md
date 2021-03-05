@@ -46,3 +46,10 @@ Estrai la cartella e metti la cartella estratta in un percorso che conosci (come
 </li>
 </ol>
 
+
+----
+Esempio Output:
+
+<img width="564" alt="esempio" src="">
+
+
