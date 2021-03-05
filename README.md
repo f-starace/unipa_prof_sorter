@@ -48,7 +48,7 @@ Estrai la cartella e metti la cartella estratta in un percorso che conosci (come
 
 
 ----
-Esempio Output:
+<h3> Esempio Output: </h3>
 
 <img width="564" alt="esempio" src="https://raw.githubusercontent.com/f-starace/unipa_prof_sorter/main/OUTPUT_EXAMPLE/Schermata%202021-03-05%20alle%2021.46.05.png">
 
