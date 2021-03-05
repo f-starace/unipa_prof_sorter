@@ -39,6 +39,10 @@ Estrai la cartella e metti la cartella estratta in un percorso che conosci (come
 <code>cd Desktop</code>
 </li>
 <li>
+<code>cd unipa_prof_sorter-main</code>
+</li>
+
+<li>
 <code> pip install -r requirements.txt </code>
 </li>
 <li>
