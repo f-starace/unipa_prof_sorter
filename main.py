@@ -63,7 +63,10 @@ class Professor():
         else:
             name_initial_str = self.name[0]
 
-        return self.surname + ' ' + name_initial_str
+        result = self.surname + ' ' + name_initial_str
+
+        # return self.surname + ' ' + name_initial_str
+        return result.lower()
 
     def fill_table(self, status, tier, column_name ):
 
@@ -172,17 +175,17 @@ for doc in tqdm(word_docs):
 
         if paragraph_text.startswith('Presenti'):
             for professor in professors:
-                if professor.identifier() in paragraph_text:
+                if professor.identifier() in paragraph_text.lower():
                     professor.fill_table('present',1, column_name )
 
         elif paragraph_text.startswith('Assenti:'):
             for professor in professors:
-                if professor.identifier() in paragraph_text:
+                if professor.identifier() in paragraph_text.lower():
                     professor.fill_table('absent',1, column_name )
 
         elif paragraph_text.startswith('Assenti giustificati'):
             for professor in professors:
-                if professor.identifier() in paragraph_text:
+                if professor.identifier() in paragraph_text.lower():
                     professor.fill_table('justified',1, column_name )
 
     
@@ -194,17 +197,17 @@ for doc in tqdm(word_docs):
         
         if paragraph_text.startswith('Presenti'):
             for professor in professors:
-                if professor.identifier() in paragraph_text:
+                if professor.identifier() in paragraph_text.lower():
                     professor.fill_table('present',2, column_name )
 
         elif paragraph_text.startswith('Assenti:'):
             for professor in professors:
-                if professor.identifier() in paragraph_text:
+                if professor.identifier() in paragraph_text.lower():
                     professor.fill_table('absent',2, column_name )
 
         elif paragraph_text.startswith('Assenti giustificati'):
             for professor in professors:
-                if professor.identifier() in paragraph_text:
+                if professor.identifier() in paragraph_text.lower():
                     professor.fill_table('justified',2, column_name )
     
     
@@ -214,19 +217,20 @@ for doc in tqdm(word_docs):
         
         if paragraph_text.startswith('Presenti'):
             for professor in professors:
-                if professor.identifier() in paragraph_text:
-                    professor.fill_table('present',3, column_name )
+                if professor.identifier() in paragraph_text.lower():
+                    professor.fill_table('present',2, column_name )
 
         elif paragraph_text.startswith('Assenti:'):
             for professor in professors:
-                if professor.identifier() in paragraph_text:
-                    professor.fill_table('absent',3, column_name )
+                if professor.identifier() in paragraph_text.lower():
+                    professor.fill_table('absent',2, column_name )
 
         elif paragraph_text.startswith('Assenti giustificati'):
             for professor in professors:
-                if professor.identifier() in paragraph_text:
-                    professor.fill_table('justified',3, column_name )
+                if professor.identifier() in paragraph_text.lower():
+                    professor.fill_table('justified',2, column_name )
 
 
 wb.save('presenze_cdd.xlsx')
+
 
